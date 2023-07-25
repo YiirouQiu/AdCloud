@@ -13,6 +13,7 @@
 
     <modules>
         <module>ad-eureka</module>
+        <module>AdCloud-ad-service</module>
     </modules>
 
     <parent>
