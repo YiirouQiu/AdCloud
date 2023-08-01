@@ -27,15 +27,11 @@ public class KafkaSender implements Sender {
 
     @Override
     public void sender(MySqlRowData rowData) {
-
-        kafkaTemplate.send(
-                topic, JSON.toJSONString(rowData)
-        );
+        kafkaTemplate.send(topic, JSON.toJSONString(rowData));
     }
 
     @KafkaListener(topics = {"ad-search-mysql-data"}, groupId = "ad-search")
     public void processMysqlRowData(ConsumerRecord<?, ?> record) {
-
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();
@@ -43,8 +39,7 @@ public class KafkaSender implements Sender {
                     message.toString(),
                     MySqlRowData.class
             );
-            System.out.println("kafka processMysqlRowData: " +
-                    JSON.toJSONString(rowData));
+            System.out.println("kafka processMysqlRowData: " + JSON.toJSONString(rowData));
         }
     }
 }
