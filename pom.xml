@@ -15,6 +15,7 @@
         <module>ad-eureka</module>
         <module>AdCloud-ad-service</module>
         <module>ad-gateway</module>
+        <module>AdCloud-ad-service/ad-dashboard</module>
     </modules>
 
     <parent>

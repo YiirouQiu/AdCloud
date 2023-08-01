@@ -1,6 +1,7 @@
 package org.AdCloud.ad.index.adplan;
 
 import lombok.extern.slf4j.Slf4j;
+import org.AdCloud.ad.index.CommonStatus;
 import org.AdCloud.ad.index.IndexAware;
 import org.springframework.stereotype.Component;
 
